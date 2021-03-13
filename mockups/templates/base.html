@@ -2,20 +2,34 @@
 {% load static %}
 <xml:html>
     <head>
-        <!-- Nav Bar -->
-        <nav class="navbar navbar-light bg-info">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="">
+        <!-- Carousel -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-mdb-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
                 <img
-                src="{% static 'images/logo.jpg' %}"
-                height="100"
-                alt=""
-                loading="lazy"
+                  src="static/images/querido_cuerpo_long.png"
+                  class="d-block w-100"
+                  alt="..."
                 />
-            </a>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="static/images/cuerpo.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="static/images/mente.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
             </div>
-        </nav>
-        <br></br>
+          </div>
+
+        <br>
 
         {% block head %}
         <title>Mockups Socorrito</title>
@@ -48,6 +62,34 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
         ></script>
     </body>
+
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/Queridocuerpomx" role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/queridocuerpomx/" role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #0a4275;">
+          © 2020 Copyright:
+          <a class="text-white" href="/">queridocuerpo.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
     {% block script %}
 
     {% endblock script %}
