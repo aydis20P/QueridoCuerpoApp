@@ -2,126 +2,76 @@
 {% load static %}
 
 {% block head %}
-    <title>Querido Cuerpo</title>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+<title>Querido Cuerpo</title>
 {% endblock head %}
 
+{% block header %}
+<div class="container gy-5">
+    <div class="row p-3"></div>
+    <div class="row p-3">
+        
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center h-100 p-4">
+                <img
+                src="static/images/querido_cuerpo_elipse.png"
+                height="200"
+                alt=""
+                loading="lazy"
+                />
+            </div>
+        </div>
+        
+    </div>
+    <div class="row p-3"></div>
+</div>
+      
+{% endblock header %}
+
 {% block content %}
-
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v10.0" nonce="2yPxJlTu"></script>
-
-    <div class="container">
-        <div class="row">
-            <div class="card">
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col p-4">
+            <div class="card text-white bg-info">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md">
-                            <div class="d-grid gap-2">
-                                <button
-                                class="btn btn-outline-info btn-rounded"
-                                type="button"
-                                data-mdb-toggle="collapse"
-                                data-mdb-target="#collapse1"
-                                aria-expanded="false"
-                                aria-controls="collapse1"
-                                >
-                                Nosotros
-                                </button>
+                    <div class="container">    
+                        <div class="row g-0">
+                            <div class="col-md">
+                                <div class="p-1">
+                                    <div class="form-outline form-white">
+                                        <i class="fas fa-user-alt trailing icon-success"></i>
+                                        <input required type="text" id="formWhite" class="form-control" />
+                                        <label class="form-label" for="formWhite">Usuario</label>
+                                      </div>
+                                </div>
                             </div>
-                            <!-- Collapsed content -->
-                            <div class="collapse mt-3" id="collapse1">
-                                <div class="card shadow-0 mb-3" style="max-width: 100rem">
-                                    <div class="card-body">
-                                        <p class="note note-success"><small><em>
-                                                Somos una empresa de salud integral comprometida a acompañarte a modificar tu 
-                                                estilo de vida y a perder peso.
-                                        </small></em></p>
+                            <div class="col-md">
+                                <div class="p-1">
+                                    <div class="form-outline form-white">
+                                        <i class="fas fa-key trailing icon-success"></i>
+                                        <input required type="text" id="form1" class="form-control" />
+                                        <label class="form-label" for="form1">Contraseña</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <h5></h5>
-                        <div class="col-md">
-                            <div class="d-grid gap-2">
-                                <button
-                                class="btn btn-outline-info btn-rounded"
-                                type="button"
-                                data-mdb-toggle="collapse"
-                                data-mdb-target="#collapse2"
-                                aria-expanded="false"
-                                aria-controls="collapse2"
-                                >
-                                Nutrición
-                                </button>
-                            </div>
-                            <!-- Collapsed content -->
-                            <div class="collapse mt-3" id="collapse2">
-                                <div class="card shadow-0 mb-3" style="max-width: 100rem">
-                                    <div class="card-body">
-                                        <p class="note note-success"><small><em>
-                                            Contamos con nutriologos que te acompañarán hacia el logro de tus objetivos.
-                                        </small></em></p>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="p-1">
+                                    <div class="d-grid gap-2">
+                                        <a href="resumen-usuario" class="btn btn-outline-light" data-mdb-ripple-color="dark">
+                                            Ingresar <i class="fas fa-sign-in-alt icon-success"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <h5></h5>
-                        <div class="col-md">
-                            <div class="d-grid gap-2">
-                                <button
-                                class="btn btn-outline-info btn-rounded"
-                                type="button"
-                                data-mdb-toggle="collapse"
-                                data-mdb-target="#collapse3"
-                                aria-expanded="false"
-                                aria-controls="collapse3"
-                                >
-                                Psicoterapia
-                                </button>
-                            </div>
-                            <!-- Collapsed content -->
-                            <div class="collapse mt-3" id="collapse3">
-                                <div class="card shadow-0 mb-3" style="max-width: 100rem">
-                                    <div class="card-body">
-                                        <p class="note note-success"><small><em>
-                                            Por medio de la psicoterapia, las personas pueden llevar adelante vidas más felices, saludables y productivas; 
-                                            en Querido Cuerpo tendrás esta atención personalizada.
-                                        </small></em></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h5></h5>
-                        <div class="col-md">
-                            <div class="d-grid gap-2">
-                                <button
-                                class="btn btn-outline-info btn-rounded"
-                                type="button"
-                                data-mdb-toggle="collapse"
-                                data-mdb-target="#collapse4"
-                                aria-expanded="false"
-                                aria-controls="collapse4"
-                                >
-                                Deporte
-                                </button>
-                            </div>
-                            <!-- Collapsed content -->
-                            <div class="collapse mt-3" id="collapse4">
-                                <div class="card shadow-0 mb-3" style="max-width: 100rem">
-                                    <div class="card-body">
-                                        <p class="note note-success"><small><em>
-                                            ¿Quieres sentirte mejor, tener más energía y hasta vivir más? Practicar un deporte te dará estos y más beneficios;
-                                            nuestro equipo cuenta con deportistas de alto rendimiento que te guiarán por el camino correcto deacuerdo a tus necesidades.        
-                                        </small></em></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
-            </div> 
+              </div>
+            <br>
         </div>
-        <br>
     </div>
-    
+</div>
+
 {% endblock content %}
