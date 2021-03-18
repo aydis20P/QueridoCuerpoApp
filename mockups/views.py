@@ -4,6 +4,7 @@ import json
 import csv
 import time
 import pandas as pd
+import os
 
 from django.shortcuts import render
 
@@ -13,9 +14,11 @@ def principal(request):
 
 def resumen_usuario(request):
 
+     THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+     STATIC_FOLDER = THIS_FOLDER + "/static/"
      try:
           # Get the tokens from file to connect to Strava
-          with open('strava_tokens.json') as json_file:
+          with open(STATIC_FOLDER + 'strava_tokens.json') as json_file:
                strava_tokens = json.load(json_file)
           print("terminé el try")
      except:
@@ -27,18 +30,18 @@ def resumen_usuario(request):
                               data = {
                                    'client_id': 63232,
                                    'client_secret': '042d93e39aa4abe4ea68fe237c6ac15bdca3261a',
-                                   'code': '39c78f54589abd55f2d5a2ba0f1c3e60d888df5a',
+                                   'code': '4ef1c6b0961c6de3bce26cb5fbf391de3856bdad',
                                    'grant_type': 'authorization_code'
                                    }
                          )
           #Save json response as a variable
           strava_tokens = response.json()
           # Save tokens to file
-          with open('strava_tokens.json', 'w') as outfile:
+          with open(STATIC_FOLDER + 'strava_tokens.json', 'w') as outfile:
                json.dump(strava_tokens, outfile)
 
           # Get the tokens from file to connect to Strava
-          with open('strava_tokens.json') as json_file:
+          with open(STATIC_FOLDER + 'strava_tokens.json') as json_file:
                strava_tokens = json.load(json_file)
 
      # If access_token has expired then 
@@ -58,14 +61,14 @@ def resumen_usuario(request):
           # Save response as json in new variable
           new_strava_tokens = response.json()
           # Save new tokens to file
-          with open('strava_tokens.json', 'w') as outfile:
+          with open(STATIC_FOLDER + 'strava_tokens.json', 'w') as outfile:
                json.dump(new_strava_tokens, outfile)
           # Use new Strava tokens from now
           strava_tokens = new_strava_tokens
      else:
           print("no entré en el if")
 
-     # Loop through all activities ***pages***
+
      url = "https://www.strava.com/api/v3/activities"
      access_token = strava_tokens['access_token']
 
@@ -107,7 +110,7 @@ def resumen_usuario(request):
 
      # Export your activities file as a csv 
      # to the folder you're running this script in
-     activities.to_csv('strava_activities.csv')
+     activities.to_csv(STATIC_FOLDER + 'strava_activities.csv')
 
 
      """
