@@ -153,15 +153,57 @@
                     Ejercicio
                 </h5>
             </div>
-            <div class="card-body">
+            <div class="card-body g-0 gy-0">
+                <div class="row p-1">
+                    <div class="d-flex justify-content-between">
+                        <h1 style="font-size:6vw;" class="display-5">tus actividades</h1>
+                        <img
+                        src="static/images/strava-logo.png"
+                        height="20"
+                        alt=""
+                        loading="lazy"
+                        />
+                    </div>
+                </div>
+                <div class="row p-1">
+                    <div class="col">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">nombre</th>
+                                        <th scope="col">fecha y hora</th>
+                                        <th scope="col">tipo</th>
+                                        <th scope="col">distancia</th>
+                                        <th scope="col">tiempo en movimiento</th>
+                                        <th scope="col">tiempo total</th>
+                                        <th scope="col">elevación ganada</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for tupla in strava_data %}
+                                    <tr>
+                                        {% for el in tupla %}
+                                        <td>{{ el }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %}
                 <div class="d-flex justify-content-center">
-                <div class="frame-container">
-                    <iframe 
-                    class="responsive-iframe" 
-                    src='https://www.strava.com/athletes/20319137/latest-rides/3d911a0419e2c0b8e3955aa4543a9d7918dbbc95'>
-                    </iframe>
+                    <div class="frame-container">
+                        <iframe 
+                        class="responsive-iframe" 
+                        src='https://www.strava.com/athletes/20319137/latest-rides/3d911a0419e2c0b8e3955aa4543a9d7918dbbc95'>
+                        </iframe>
+                    </div>
                 </div>
-                </div>
+                {% endcomment %}
             </div>
         </div>
     </div>
