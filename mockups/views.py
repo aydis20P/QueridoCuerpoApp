@@ -14,7 +14,12 @@ import re
 
 
 def principal(request):
+     todos_usuarios = Usuario.objects.all()
+     usuario1 = todos_usuarios[0]
+     usuario1.id_strava = None
+     usuario1.save()
      request.session['id_strava'] = ""
+
      uri = request.get_full_path()
      print(uri)
      m = re.search('code=(.+?)&', uri)
@@ -42,9 +47,9 @@ def resumen_usuario_strava(request):
           if not usuario1.id_strava:
                #ask for auth to get user code
                code_from_oauth = request.session['id_strava']
-               
+
                #exchange user code for user tokens
-               # Make Strava auth API call with your 
+               # Make Strava auth API call with your
                # client_code, client_secret and code
                response = requests.post(
                                    url = 'https://www.strava.com/oauth/token',
@@ -71,7 +76,7 @@ def resumen_usuario_strava(request):
                usuario1.save()
 
           else:
-               # If access_token has expired then 
+               # If access_token has expired then
                # use the refresh_token to get the new access_token
                if strava_tokens['expires_at'] < time.time():
                     print("entré en el if")
@@ -95,7 +100,7 @@ def resumen_usuario_strava(request):
                else:
                     print("no entré en el if")
 
-          url = 'https://www.strava.com/api/v3/athletes/'+ usuario1.id_strava +'/activities' #put athlete id
+          url = 'https://www.strava.com/api/v3/athletes/'+ str(usuario1.id_strava) +'/activities' #put athlete id
           access_token = strava_tokens['access_token']
 
           # Create the dataframe ready for the API call to store your activity data
@@ -127,7 +132,7 @@ def resumen_usuario_strava(request):
                     activities.loc[x + (page-1)*5,'elapsed_time'] = r[x]['elapsed_time']
                     activities.loc[x + (page-1)*5,'total_elevation_gain'] = r[x]['total_elevation_gain']
 
-          # Export your activities file as a csv 
+          # Export your activities file as a csv
           # to the folder you're running this script in
           activities.to_csv(STATIC_FOLDER + 'strava_activities.csv')
 
@@ -162,9 +167,9 @@ def resumen_usuario_strava(request):
           context = {}
           context['strava_data'] = cleanned_data
           return render(request, 'resumen-usuario.html', context)
-     
+
      else:
-          return redirect('https://www.strava.com/oauth/authorize?client_id=63232&response_type=code&redirect_uri=http://192.168.0.4&approval_prompt=force&scope=profile:read_all,activity:read_all')
+          return redirect('https://www.strava.com/oauth/authorize?client_id=63232&response_type=code&redirect_uri=http://desarrolloqueridoapp.pythonanywhere.com&approval_prompt=force&scope=profile:read_all,activity:read_all')
 
 
 def resumen_usuario(request):
@@ -178,7 +183,7 @@ def resumen_usuario(request):
           print("terminé el try")
      except:
           print("entré al except")
-          # Make Strava auth API call with your 
+          # Make Strava auth API call with your
           # client_code, client_secret and code
           response = requests.post(
                               url = 'https://www.strava.com/oauth/token',
@@ -199,7 +204,7 @@ def resumen_usuario(request):
           with open(STATIC_FOLDER + 'strava_tokens.json') as json_file:
                strava_tokens = json.load(json_file)
 
-     # If access_token has expired then 
+     # If access_token has expired then
      # use the refresh_token to get the new access_token
      if strava_tokens['expires_at'] < time.time():
           print("entré en el if")
@@ -223,7 +228,7 @@ def resumen_usuario(request):
      else:
           print("no entré en el if")
 
-     #url = 'https://www.strava.com/api/v3/athletes/20319137/activities' put athlete id (shold store it in database after code exchange) 
+     #url = 'https://www.strava.com/api/v3/athletes/20319137/activities' put athlete id (shold store it in database after code exchange)
      url = "https://www.strava.com/api/v3/activities"
      access_token = strava_tokens['access_token']
 
@@ -257,7 +262,7 @@ def resumen_usuario(request):
                activities.loc[x + (page-1)*5,'elapsed_time'] = r[x]['elapsed_time']
                activities.loc[x + (page-1)*5,'total_elevation_gain'] = r[x]['total_elevation_gain']
 
-     # Export your activities file as a csv 
+     # Export your activities file as a csv
      # to the folder you're running this script in
      activities.to_csv(STATIC_FOLDER + 'strava_activities.csv')
 
