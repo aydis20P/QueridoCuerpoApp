@@ -66,6 +66,84 @@
 
 {% block content %}
 
+
+<!-- Tabs navs -->
+<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+    <li class="nav-item" role="presentation" onclick="tabToInput()">
+    <a
+        class="nav-link active"
+        id="ex1-tab-1"
+        data-mdb-toggle="tab"
+        href="#ex1-tabs-1"
+        role="tab"
+        aria-controls="ex1-tabs-1"
+        aria-selected="true"
+        >Psicológica</a
+    >
+    </li>
+    <li class="nav-item" role="presentation" onclick="tabToInput()">
+    <a
+        class="nav-link"
+        id="ex1-tab-2"
+        data-mdb-toggle="tab"
+        href="#ex1-tabs-2"
+        role="tab"
+        aria-controls="ex1-tabs-2"
+        aria-selected="false"
+        >Nuticición</a
+    >
+    </li>
+    <li class="nav-item" role="presentation" onclick="tabToInput()">
+    <a
+        class="nav-link"
+        id="ex1-tab-3"
+        data-mdb-toggle="tab"
+        href="#ex1-tabs-3"
+        role="tab"
+        aria-controls="ex1-tabs-3"
+        aria-selected="false"
+        >Entrenamiento</a
+    >
+    </li>
+</ul>
+<!-- Tabs navs -->
+
+
+<!-- Tabs content -->
+<div class="tab-content" id="ex1-content">
+
+    <!-- Tab 1 -->
+    <div
+    class="tab-pane fade show active"
+    id="ex1-tabs-1"
+    role="tabpanel"
+    aria-labelledby="ex1-tab-1"
+    value = "psicológica"
+    >
+
+        <h5 class="ms-3"> Cita Psicológica </h5>
+
+    </div>
+
+    <!-- Tab 2 -->
+    <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+        
+        <h5 class="ms-3"> Cita Nutrición </h5>
+
+    </div>
+
+    <!-- Tab 3 -->
+    <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+        
+        <h5 class="ms-3"> Entrenamiento </h5>
+
+    </div>
+
+</div>
+<!-- Tabs content -->
+
+<input id="tipo-cita" name="tipo-cita" type="hidden" value="ex1-tab-1">
+
 <div class="container mt-3">
     <div id="card-mes" class="row">
         <div class="col">
@@ -180,30 +258,43 @@
 {% block script %}
 <script>
 
-    function hideShow(id) {
-        var x = document.getElementById(id);
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
+    function tabToInput() {
+        var tabs = document.querySelectorAll('[role="tab"]')
+        for(i = 0; i<tabs.length; i++){
+            if(tabs[i].classList.contains("active")){
+                document.getElementById("tipo-cita").value = tabs[i].id
+            }
         }
     }
 
+    /**
+     * función para mostrar tarjeta día, mandar números de días
+     * segun el mes y ocultar la opción siguiente y el select de la tarjeta mes.
+     * input: id de la tarjeta día.
+     * */
     function showCardDia(id) {
+        //mostrar tarjeta día
         var x = document.getElementById(id);
         x.style.display = "block";
+        //pasar el valor de select mes a text mes
         var y = document.getElementById("select-mes");
         var i = y.selectedIndex;
         document.getElementById("text-mes").innerHTML = y.options[i].textContent;
         document.getElementById("text-mes").style.display = "block";
+        //ocultar select mes y boton siguiente
         y.style.display = "none";
         document.getElementById("sig-mes").style.display = "none";
         document.getElementById("sig-mes-icon").style.display = "none";
 
+        //agregar días al select día según el mes, tomando días del range en context
         var selectDia = document.getElementById("select-dia");
+        //obtener el mes seleccionado del select mes
         var m = y.options[i].value;
+        //para cada mes en el contexto 
         {% for month in months %}
+            //si es el més seleccionado en el select mes
             if ({{ month.3 }} == m){
+                //agregar los días correspondientes al select
                 {% for i in month.2 %}
                     var option = document.createElement("option");
                     option.text = "{{ i }}";

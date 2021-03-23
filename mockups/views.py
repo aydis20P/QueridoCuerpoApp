@@ -211,6 +211,7 @@ def resumen_usuario(request):
      for act in activities.to_records():
           new_act = list(act)
           new_act.pop(0)
+          new_act.pop(0)
           cleanned_data.append(new_act)
 
      context = {}
