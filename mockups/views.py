@@ -12,6 +12,9 @@ from django.shortcuts import render, redirect
 from .models import Usuario
 import re
 
+import calendar
+import datetime
+
 
 def principal(request):
      todos_usuarios = Usuario.objects.all()
@@ -213,3 +216,50 @@ def resumen_usuario(request):
      context = {}
      context['strava_data'] = cleanned_data
      return render(request, 'resumen-usuario.html', context)
+
+def calendario_citas(request):
+
+     now = datetime.datetime.now()
+
+     months = []
+
+     days_jan = calendar.monthrange(now.year,1)
+     days_feb = calendar.monthrange(now.year,2)
+     days_mar = calendar.monthrange(now.year,3)
+     days_apr = calendar.monthrange(now.year,4)
+     days_may = calendar.monthrange(now.year,5)
+     days_jun = calendar.monthrange(now.year,6)
+     days_jul = calendar.monthrange(now.year,7)
+     days_aug = calendar.monthrange(now.year,8)
+     days_sep = calendar.monthrange(now.year,9)
+     days_oct = calendar.monthrange(now.year,10)
+     days_nov = calendar.monthrange(now.year,11)
+     days_dec = calendar.monthrange(now.year,12)
+
+     months.extend([
+          days_jan,
+          days_feb,
+          days_mar,
+          days_apr,
+          days_may,
+          days_jun,
+          days_jul,
+          days_aug,
+          days_sep,
+          days_oct,
+          days_nov,
+          days_dec])
+ 
+     months_list = []
+     for index, month in enumerate(months):
+          aux = []
+          for el in month:
+               aux.append(el)
+          aux.append(range(1,month[1]+1))
+          aux.append(index + 1)
+          months_list.append(aux)
+     
+     print(months_list)
+     context = {}
+     context['months'] = months_list
+     return render(request, 'calendario-citas.html', context)

@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.principal, name="principal"),
     path('resumen-usuario', views.resumen_usuario, name="resumen-usuario"),
     path('resumen-usuario-strava', views.resumen_usuario_strava, name="resumen-usuario-strava"),
+    path('calendario-citas', views.calendario_citas, name="calendario-citas"),
 ]
