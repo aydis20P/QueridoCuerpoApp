@@ -264,3 +264,8 @@ def calendario_citas(request):
      context = {}
      context['months'] = months_list
      return render(request, 'calendario-citas.html', context)
+
+def citas_disponibles(request):
+
+     context = {}
+     return render(request, 'citas-disponibles.html', context)
