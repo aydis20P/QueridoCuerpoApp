@@ -7,59 +7,8 @@
 {% endblock head %}
 
 {% block header %}
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Toggle button -->
-        <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        >
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="row g-0">
-                <div class="col p-3">
-                    <a href="#" class="btn btn-outline-light btn-floating" data-mdb-ripple-color="dark">
-                        <i class="fas fa-user-alt"></i>
-                    </a>
-                </div>
-                <div class="col p-3">
-                    <a href="#" class="btn btn-outline-light btn-floating" data-mdb-ripple-color="dark">
-                        <i class="fas fa-clock"></i>
-                    </a>
-                </div>
-        </div>
-  
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <!-- Right links -->
-            <div class="d-flex justify-content-end">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/">Cerrar sesión</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mi perfíl</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Configuración</a
-                    >
-                </li>
-                </ul>
-            </div>
-            <!-- Left links -->
-        <!-- Collapsible wrapper -->
-        </div>
-    <!-- Container wrapper -->
-    </div>
-</nav>
-  <!-- Navbar -->
+
+    {% include 'navbar.html' %}
       
 {% endblock header %}
 
