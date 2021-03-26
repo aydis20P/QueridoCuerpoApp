@@ -15,6 +15,7 @@
 {% block content %}
 <div class="container-fluid gy-5 mb-5">
     <br>
+    <!--btn mi día-->
     <div class="d-flex justify-content-center">
         <div class="row p-3">
             <div class="col p1">
@@ -24,8 +25,10 @@
             </div>
         </div>
     </div>
+
+    <!--tarjeta ánimo-->
     <div class="row p-4">
-        <div class="card text-white bg-info">
+        <div class="card text-white bg-info" onclick="lanzaModal('modalAnimo')" style="cursor: pointer;">
             <div class="card-header mt-2">
                     <h5 class="card-title">
                         <i class="far fa-laugh-beam"></i>
@@ -72,8 +75,10 @@
             </div>
         </div>
     </div>
+
+    <!--tarjeta alimentación-->
     <div class="row p-4">
-        <div class="card text-white bg-info">
+        <div class="card text-white bg-info" onclick="lanzaModal('modalAlimetacion')" style="cursor: pointer;">
             <div class="card-header mt-2">
                 <h5 class="card-title">
                     <i class="fas fa-carrot"></i>
@@ -192,8 +197,10 @@
             </div>
         </div>
     </div>
+
+    <!--tarjeta hidratación-->
     <div class="row p-4">
-        <div class="card text-white bg-info">
+        <div class="card text-white bg-info" onclick="lanzaModal('modalHidratacion')" style="cursor: pointer;">
             <div class="card-header mt-2">
                 <h5 class="card-title">
                     <i class="fas fa-tint"></i>
@@ -237,6 +244,8 @@
             </div>
         </div>
     </div>
+
+    <!--tarjeta strava-->
     <div class="row p-4">
         <div class="card text-white bg-info">
             <div class="card-header mt-2">
@@ -299,6 +308,8 @@
             </div>
         </div>
     </div>
+
+    <!--btn últimos 7 días-->
     <div class="d-flex justify-content-center">
         <div class="row p-3">
             <div class="col p1">
@@ -310,4 +321,291 @@
     </div>
 </div>
 
+<!-- Modal Ánimo-->
+<div
+  class="modal fade"
+  id="modalAnimo"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mi estado de ánimo</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-mdb-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success list-group-item-action" style="cursor: pointer;">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img
+                    class="ms-3"
+                    src="static/images/happy.png"
+                    height="40"
+                    alt=""
+                    loading="lazy"
+                    />
+                    <h1 class="display-5 me-3">Content@</h1>
+                </div>
+            </li>
+            <li class="list-group-item list-group-item-info list-group-item-action" style="cursor: pointer;">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img
+                    class="ms-3"
+                    src="static/images/relaxed.png"
+                    height="50"
+                    alt=""
+                    loading="lazy"
+                    />
+                    <h1 class="display-5 me-3">Relajad@</h1>
+                </div>
+            </li>
+            <li class="list-group-item list-group-item-secondary list-group-item-action" style="cursor: pointer;">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img
+                    class="ms-3"
+                    src="static/images/confused.png"
+                    height="40"
+                    alt=""
+                    loading="lazy"
+                    />
+                    <h1 class="display-5 me-3">Confundid@</h1>
+                </div>
+            </li>
+            <li class="list-group-item list-group-item-warning list-group-item-action" style="cursor: pointer;">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img
+                    class="ms-3"
+                    src="static/images/shocked.png"
+                    height="40"
+                    alt=""
+                    loading="lazy"
+                    />
+                    <h1 class="display-5 me-3">Sorprendid@</h1>
+                </div>
+            </li>
+            <li class="list-group-item list-group-item-dark list-group-item-action" style="cursor: pointer;">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img
+                    class="ms-3"
+                    src="static/images/sad.png"
+                    height="50"
+                    alt=""
+                    loading="lazy"
+                    />
+                    <h1 class="display-5 me-3">Tristón/@</h1>
+                </div>
+            </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+          Cerrar
+        </button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Alimentación-->
+<div
+  class="modal fade"
+  id="modalAlimetacion"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mi Alimentación</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-mdb-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-success">
+                <div class="d-flex justify-content-start">
+                    <div class="form-check p-2 ms-3">
+                        <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckCheckedDisabled"
+                        checked
+                        disabled
+                        />
+                    </div>
+                    <p class="lead mb-1">
+                        <small>
+                            Desayuno
+                        </small>
+                    </p>
+                </div>
+            </li>
+            <li class="list-group-item list-group-item-success">
+                <div class="d-flex justify-content-start">
+                    <div class="form-check p-2 ms-3">
+                        <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckCheckedDisabled"
+                        />
+                    </div>
+                    <p class="lead mb-1">
+                        <small>
+                            Almuerzo
+                        </small>
+                    </p>
+                </div>
+            </li>
+            <li class="list-group-item list-group-item-success">
+                <div class="d-flex justify-content-start">
+                    <div class="form-check p-2 ms-3">
+                        <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckCheckedDisabled"
+                        />
+                    </div>
+                    <p class="lead mb-1">
+                        <small>
+                            Comida
+                        </small>
+                    </p>
+                </div>
+            </li>
+            <li class="list-group-item list-group-item-success">
+                <div class="d-flex justify-content-start">
+                    <div class="form-check p-2 ms-3">
+                        <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckCheckedDisabled"
+                        />
+                    </div>
+                    <p class="lead mb-1">
+                        <small>
+                            Merienda
+                        </small>
+                    </p>
+                </div>
+            </li>    
+            <li class="list-group-item list-group-item-success">
+                <div class="d-flex justify-content-start">
+                    <div class="form-check p-2 ms-3">
+                        <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckCheckedDisabled"
+                        />
+                    </div>
+                    <p class="lead mb-1">
+                        <small>
+                            Cena
+                        </small>
+                    </p>
+                </div>
+            </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+          Cerrar
+        </button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Hidratación-->
+<div
+  class="modal fade"
+  id="modalHidratacion"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mi hidratación</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-mdb-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h5>Total de hoy: 1350ml</h5>
+        <ul id="ul-hidratacion-modal" class="list-group">
+            <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+            1 Ánfora
+            <span class="badge bg-primary rounded-pill">600ml</span>
+            </li>
+            <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
+            2 Vasos
+            <span class="badge bg-primary rounded-pill">500ml</span>
+            </li>
+            <li class="list-group-item d-flex list-group-item-info justify-content-between align-items-center">
+            1 Vaso
+            <span class="badge bg-primary rounded-pill">250ml</span>
+            </li>
+        </ul>
+        <div class="d-flex justify-content-end mt-2">
+            <a
+            class="btn btn-primary btn-floating"
+            style="background-color: #ac2bac"
+            role="button"
+            onclick="agrega_li('ul-hidratacion-modal')"
+            >
+            <i class="fas fa-plus-circle"></i>
+            </a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+          Cerrar
+        </button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock content %}
+
+{% block script %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    function lanzaModal(id){
+        var  idJQ = '#' + id;
+        $(idJQ).modal('toggle');
+    }
+
+    function agrega_li(ul){
+        var ul = document.getElementById(ul);
+        var li = document.createElement("li");
+        li.classList = "list-group-item"
+        li.innerHTML = '<section class="d-flex justify-content-between align-items-center">  <div> <select id="select-mes" class="form-select mb-3 mt-3"> <option value="0" selected>Vaso</option> </select> </div>   <div class="form-outline"> <input type="number" id="form1" class="form-control" /> <label class="form-label" for="form1">Ingresa los mililitros</label> </div>   </section>'
+        ul.appendChild(li)
+    }
+</script>
+{% endblock script %}
