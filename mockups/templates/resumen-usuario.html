@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <title>Querido Cuerpo</title>
 {% endblock head %}
 
 {% block header %}
 
     {% include 'navbar.html' %}
-      
+
 {% endblock header %}
 
 {% block content %}
@@ -56,7 +56,7 @@
                             <div class="col">
                                 <div class="d-flex justify-content-end">
                                     <h1 style="font-size:5vw;" class="display-5">80/100</h1>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -271,7 +271,7 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
-                                    <tr>
+                                    <tr class="table-info">
                                         <th scope="col">nombre</th>
                                         <th scope="col">fecha y hora</th>
                                         <th scope="col">tipo</th>
@@ -283,7 +283,7 @@
                                 </thead>
                                 <tbody>
                                     {% for tupla in strava_data %}
-                                    <tr>
+                                    <tr class="table-danger">
                                         {% for el in tupla %}
                                         <td>{{ el }}</td>
                                         {% endfor %}
@@ -298,8 +298,8 @@
                 {% comment %}
                 <div class="d-flex justify-content-center">
                     <div class="frame-container">
-                        <iframe 
-                        class="responsive-iframe" 
+                        <iframe
+                        class="responsive-iframe"
                         src='https://www.strava.com/athletes/20319137/latest-rides/3d911a0419e2c0b8e3955aa4543a9d7918dbbc95'>
                         </iframe>
                     </div>
@@ -504,7 +504,7 @@
                         </small>
                     </p>
                 </div>
-            </li>    
+            </li>
             <li class="list-group-item list-group-item-success">
                 <div class="d-flex justify-content-start">
                     <div class="form-check p-2 ms-3">
