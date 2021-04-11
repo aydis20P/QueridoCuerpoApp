@@ -181,7 +181,7 @@ def resumen_usuario(request):
 
      THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
      STATIC_FOLDER = THIS_FOLDER + "/static/"
-    
+
      # read csv only for test
      activities = pd.read_csv(STATIC_FOLDER + 'strava_activities_for_test.csv')
 
@@ -250,7 +250,7 @@ def calendario_citas(request):
           days_oct,
           days_nov,
           days_dec])
- 
+
      months_list = []
      for index, month in enumerate(months):
           aux = []
@@ -259,7 +259,7 @@ def calendario_citas(request):
           aux.append(range(1,month[1]+1))
           aux.append(index + 1)
           months_list.append(aux)
-     
+
      print(months_list)
      context = {}
      context['months'] = months_list
@@ -269,3 +269,8 @@ def citas_disponibles(request):
 
      context = {}
      return render(request, 'citas-disponibles.html', context)
+
+def alimentacion(request):
+
+    context = {}
+    return render(request, 'alimentacion.html', context)

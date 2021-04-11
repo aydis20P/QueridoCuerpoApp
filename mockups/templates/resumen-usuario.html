@@ -78,7 +78,7 @@
 
     <!--tarjeta alimentación-->
     <div class="row p-4">
-        <div class="card text-white bg-info" onclick="lanzaModal('modalAlimetacion')" style="cursor: pointer;">
+        <div class="card text-white bg-info" onclick="redireccionaAlimentacion()" style="cursor: pointer;">
             <div class="card-header mt-2">
                 <h5 class="card-title">
                     <i class="fas fa-carrot"></i>
@@ -186,10 +186,10 @@
                             <div class="col d-flex justify-content-center">
                                 <p class="lead mb-1">
                                     <small>
-                                        Editar
+                                        Ver plan alimenticio
                                     </small>
                                 </p>
-                                <i class="fas fa-edit p-2"></i>
+                                <i class="fas fa-utensils p-2"></i>
                             </div>
                         </div>
                     </div>
@@ -604,8 +604,12 @@
         var ul = document.getElementById(ul);
         var li = document.createElement("li");
         li.classList = "list-group-item"
-        li.innerHTML = '<section class="d-flex justify-content-between align-items-center">  <div> <select id="select-mes" class="form-select mb-3 mt-3"> <option value="0" selected>Vaso</option> </select> </div>   <div class="form-outline"> <input type="number" id="form1" class="form-control" /> <label class="form-label" for="form1">Ingresa los mililitros</label> </div>   </section>'
+        li.innerHTML = '<section class="d-flex justify-content-between align-items-center">  <div> <select id="select-mes" class="form-select mb-3 mt-3"> <option value="0" selected>Vaso</option> <option value="0">Ánfora</option> </select> </div>   <div class="form-outline"> <input type="number" id="form1" class="form-control" /> <label class="form-label" for="form1">Ingresa los mililitros</label> </div>   </section>'
         ul.appendChild(li)
+    }
+
+    function redireccionaAlimentacion(){
+        window.location.href = "/alimentacion";        
     }
 </script>
 {% endblock script %}

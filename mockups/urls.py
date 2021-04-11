@@ -7,4 +7,5 @@ urlpatterns = [
     path('resumen-usuario-strava', views.resumen_usuario_strava, name="resumen-usuario-strava"),
     path('calendario-citas', views.calendario_citas, name="calendario-citas"),
     path('citas-disponibles', views.citas_disponibles, name="citas_disponibles"),
+    path('alimentacion', views.alimentacion, name="alimentacion"),
 ]
