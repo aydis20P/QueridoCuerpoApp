@@ -15,7 +15,7 @@
 
 {% block content %}
 
-<!-- Modal Alimentación-->
+<!-- Card Alimentación-->
 <div class="container-fluid gy-5 mb-5 mt-3">
     <div class="card text-white bg-info">
       <div class="card-body">
@@ -110,15 +110,229 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-          Cerrar
-        </button>
         <button type="button" class="btn btn-primary">Guardar Cambios</button>
       </div>
+    </div>
+
+    <!-- tabla desayunos -->
+    <div class="card text-white bg-info mt-3 table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tus desayunos</th>
+                    <th></th>
+                    <th></th>
+                </tr>          
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="card text-white bg-info" style="width: 18rem; cursor: pointer;" onclick="lanzaModal('modalFruta')">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img
+                                    src="static/images/fruta.jpg"
+                                    class="img-fluid"
+                                    style="width:300px;height:200px;"
+                                    alt="..."
+                                />
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">
+                                    Fruta
+                                </h5>
+                                <p class="card-text">
+                                    La fruta es rica en agua, fibra, vitaminas y minerales. 
+                                    Por tanto, desayunar fruta por la mañana nos ayudará a mantenernos 
+                                    hidratadas y a evitar el estreñimiento. 
+                                    Es un complemento más que ideal para empezar el día.
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card text-white bg-info" style="width: 18rem">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img
+                                    src="static/images/quesadillas.jpg"
+                                    class="img-fluid"
+                                    style="width:300px;height:200px;"
+                                    alt="..."
+                                />
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">
+                                    Quesadillas
+                                </h5>
+                                <p class="card-text">
+                                    Elabóralas con torilla de harina integral y huevo, son un desayuno 
+                                    rico en fibra y aminoácidos, son el desyuno ideal para que logres
+                                    tu día lleno de energía.                                    
+                                </p>
+                            </div>
+                        </div>                        
+                    </td>
+                    <td>
+                        <div class="card text-white bg-info" style="width: 18rem">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img
+                                    src="static/images/balanceado.jpg"
+                                    class="img-fluid"
+                                    style="width:300px;height:200px;"
+                                    alt="..."
+                                />
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">
+                                    Plato balanceado
+                                </h5>
+                                <p class="card-text">
+                                    Un desayuno balanceado elaborado para los paladares más exigentes
+                                    ideal para consentir tu paladar y comenzar el día con mucha energía.                                    
+                                </p>
+                            </div>
+                        </div>                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- tabla almuerzos -->
+
+    <!-- tabla comidas -->
+
+    <!-- tabla meriendas -->
+
+    <!-- tabla cenas -->
+
+    <!-- Modal Fruta -->
+    <div
+    class="modal fade"
+    id="modalFruta"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    >
+        <div class="modal-dialog modal-dialog-centered">
+            <div id="modalOriginal" class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tus porciones</h5>
+                    <button
+                    type="button"
+                    class="btn-close"
+                    data-mdb-dismiss="modal"
+                    aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card table-responsive">                
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ingrediente</th>
+                                    <th scope="col">Tipo</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Platano</td>
+                                    <td>Fruta</td>
+                                    <td>1/2 pz.</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="cambiaContenido('modalOriginal')">Cambiar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Melón</td>
+                                    <td>Fruta</td>
+                                    <td>100gr.</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Cambiar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Fruto rojo</td>
+                                    <td>Micro nutriente</td>                                
+                                    <td>1 pz.</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Cambiar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Yogurt natural</td>
+                                    <td>Lacteo(proteina)</td>
+                                    <td>100 ml.</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Cambiar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Avena en hojuela</td>
+                                    <td>Cereal</td>            
+                                    <td>1/2 taza</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Cambiar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nuez entera</td>
+                                    <td>Grasas</td>
+                                    <td>6 mitades</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Cambiar</button>
+                                    </td>
+                                </tr>                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                    Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- contenido oculto -->
+<div hidden id="modalOculto" class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Elige una opción</h5>
+    </div>
+    <div class="modal-body">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Platano</option>
+            <option value="1">Manzana</option>
+            <option value="2">Melón</option>
+            <option value="3">Papaya</option>
+        </select>
+    </div>
+    <div class="modal-footer">
+        </button>
+        <button type="button" class="btn btn-primary" onclick="cambiaContenido('modalOriginal')">Guardar cambios</button>
     </div>
 </div>
 {% endblock content %}
 
 {% block script %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+<script>
+    function lanzaModal(id){
+        var  idJQ = '#' + id;
+        $(idJQ).modal('toggle');
+    }
+
+    function cambiaContenido(id){
+        var originalInner = document.getElementById(id).innerHTML;
+        document.getElementById(id).innerHTML = document.getElementById('modalOculto').innerHTML;
+        document.getElementById('modalOculto').innerHTML = originalInner;
+    }
+</script>
 
 {% endblock script %}
