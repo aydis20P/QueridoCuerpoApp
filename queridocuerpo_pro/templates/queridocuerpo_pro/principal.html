@@ -6,35 +6,31 @@
 {% endblock head %}
 
 {% block header %}
-<div class="container gy-5">
-    <div class="row p-3"></div>
-    <div class="row p-3">
+<div class="container">
+    <div class="row justify-content-center">
         
-        <div class="col">
-            <div class="d-flex justify-content-center align-items-center h-100 p-10 mt-5">
-                <img
-                src="{% static 'images/queridocuerpo_pro_logobw.png' %}"
-                loading="lazy"
-                class="img-fluid"
-                />
-            </div>
+        <div class="col-md-5 justify-content-center">
+            <img
+            src="{% static 'images/queridocuerpo_pro_logobw.png' %}"
+            loading="lazy"
+            class="img-fluid"
+            />
         </div>
         
     </div>
     <div class="row p-3"></div>
 </div>
-      
 {% endblock header %}
 
 {% block content %}
-<div class="container-fluid mt-5">
+<div class="container-fluid">
     <div class="row">
         <div class="col p-4">
             <div>
                 <div class="card-body">
                     <div class="container">    
-                        <div class="row g-0">
-                            <div class="col-md">
+                        <div class="row g-0 justify-content-center">
+                            <div class="col-md-4">
                                 <div class="p-1">
                                     <div class="form-outline">
                                         <i class="fas fa-user-alt trailing"></i>
@@ -43,7 +39,7 @@
                                       </div>
                                 </div>
                             </div>
-                            <div class="col-md">
+                            <div class="col-md-4">
                                 <div class="p-1">
                                     <div class="form-outline">
                                         <i class="fas fa-key trailing"></i>
@@ -53,8 +49,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
                                 <div class="p-1">
                                     <div class="d-grid gap-2">
                                         <a href="resumen-usuario" class="btn btn-outline" data-mdb-ripple-color="dark">
