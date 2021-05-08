@@ -1,0 +1,133 @@
+{% extends 'queridocuerpo_pro/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Perfil profesional</title>
+<link href="{% static 'css/perfil-profesional.css' %}" rel="stylesheet" type="text/css">
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <div class="main-body">    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>Ere Rojas</h4>
+                      <p class="text-secondary mb-1">Psicoterapeuta</p>
+                      <p class="text-muted font-size-sm">CDMX, México</p>
+                      <button class="btn btn-outline-primary mt-1">Cambiar avatar</button>
+                      <a href="resumen-usuario" class="btn btn-primary mt-1">Regresar a resumen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><i class="fab fa-twitter"></i>&nbspTwitter</h6>
+                    <span class="text-secondary">@queridocuerpo</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><i class="fab fa-instagram"></i>&nbspInstagram</h6>
+                    <span class="text-secondary">@queridocuerpomx</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><i class="fab fa-facebook"></i>&nbspFacebook</h6>
+                    <span class="text-secondary">Querido cuerpo</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nombre completo</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Eréndira Rojas
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      ere_dia2@hotmail.com
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Teléfono</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      55 4364 6479
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Dirección</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Calle x, 333 <br> coyoacan, CDMX, mx
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row gutters-sm">
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">estadísticas</i>&nbspCitas (semanal)</h6>
+                      <small>Pendientes</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Atendidas</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Todas</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">estadísticas</i>&nbspMiembros Subscritos</h6>
+                      <small>Activos</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Vencidos</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Pŕoximos a vencer</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <small>Todos</small>
+                      <div class="progress mb-3" style="height: 5px">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

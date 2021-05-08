@@ -1,0 +1,129 @@
+{% extends 'queridocuerpo_pro/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Perfil profesional</title>
+<link href="{% static 'css/perfil-profesional.css' %}" rel="stylesheet" type="text/css">
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <div class="main-body">    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>Toby</h4>
+                      <p class="text-muted font-size-sm">CDMX, México</p>
+                      <a href="resumen-usuario" class="btn btn-primary mt-1">Regresar a resumen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Edad</h6>
+                    <span class="text-secondary">25</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Peso</h6>
+                    <span class="text-secondary">70kg</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Estatura</h6>
+                    <span class="text-secondary">168cm</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nombre completo</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Tobias Palacios Reyes
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      toby@gmail.com
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Teléfono</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      (239) 816-9029
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row gutters-sm">
+                <div class="col mb-3">
+                  <div class="card h-100">
+                    <div class="card-body table-responsive">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Información del plan</i></h6>
+
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Plan</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          Me cuido
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Vencimiento</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          20/05/2021
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Citas disponibles</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          2
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Objetivo</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          Ganar masa muscular
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col">
+                          <a href="plan-alimenticio-miembro" class="btn btn-primary btn-block">Ver plan alimenticio</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}
