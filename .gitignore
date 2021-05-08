@@ -7,4 +7,3 @@ mockups/static
 .DS_Store
 mysite/settings.py
 mockups/migrations/
-static/

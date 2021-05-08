@@ -1,0 +1,6 @@
+,name,start_date_local,type,distance,moving_time,elapsed_time,total_elevation_gain
+0,Regreso de mixcoac,2021-03-09T13:12:24Z,Ride,13917.2,1969,2318,108.0
+1,Ida a mixcoac,2021-03-09T10:18:02Z,Ride,12662.9,1783,2308,207.0
+2,Regreso del Ajusco,2021-02-21T11:19:00Z,Ride,45544.5,5140,5346,66.0
+3,Ida al Ajusco,2021-02-21T07:10:10Z,Ride,47300.5,9419,10159,1186.0
+4,Pirámides,2021-02-07T07:34:14Z,Ride,112972.0,15716,25084,389.0
