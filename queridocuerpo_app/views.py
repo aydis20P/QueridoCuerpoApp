@@ -34,7 +34,7 @@ def principal(request):
           return redirect('resumen-usuario-strava')
 
      context = {}
-     return render(request, 'principal.html', context)
+     return render(request, 'queridocuerpo_app/principal.html', context)
 
 
 def resumen_usuario_strava(request):
@@ -175,7 +175,7 @@ def resumen_usuario_strava(request):
 
      context = {}
      context['strava_data'] = cleanned_data
-     return render(request, 'resumen-usuario.html', context)
+     return render(request, 'queridocuerpo_app/resumen-usuario.html', context)
 
 def resumen_usuario(request):
 
@@ -216,7 +216,7 @@ def resumen_usuario(request):
 
      context = {}
      context['strava_data'] = cleanned_data
-     return render(request, 'resumen-usuario.html', context)
+     return render(request, 'queridocuerpo_app/resumen-usuario.html', context)
 
 def calendario_citas(request):
 
@@ -263,14 +263,14 @@ def calendario_citas(request):
      print(months_list)
      context = {}
      context['months'] = months_list
-     return render(request, 'calendario-citas.html', context)
+     return render(request, 'queridocuerpo_app/calendario-citas.html', context)
 
 def citas_disponibles(request):
 
      context = {}
-     return render(request, 'citas-disponibles.html', context)
+     return render(request, 'queridocuerpo_app/citas-disponibles.html', context)
 
 def alimentacion(request):
 
     context = {}
-    return render(request, 'alimentacion.html', context)
+    return render(request, 'queridocuerpo_app/alimentacion.html', context)

@@ -1,0 +1,125 @@
+{% extends 'queridocuerpo_pro/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Perfil profesional</title>
+<link href="{% static 'css/perfil-profesional.css' %}" rel="stylesheet" type="text/css">
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <div class="main-body">    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>Toby</h4>
+                      <p class="text-muted font-size-sm">CDMX, México</p>
+                      <a href="resumen-usuario" class="btn btn-primary mt-1">Regresar a resumen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Nombre completo</h6>
+                    <span class="text-secondary">Tobias Palacios Reyes</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Edad</h6>
+                    <span class="text-secondary">25</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Peso</h6>
+                    <span class="text-secondary">70kg</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Estatura</h6>
+                    <span class="text-secondary">168cm</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Email</h6>
+                    <span class="text-secondary">toby@gmail.com</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0">Teléfono</h6>
+                    <span class="text-secondary">(239) 816-9029</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Columna de la derecha -->
+            <div class="col-md-8">
+              <div class="row gutters-sm">
+                <div class="col mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Plan Alimenticio</i></h6>
+                      <h6 class="d-flex align-items-center mb-3">Tipo de alimentación: Vegano</h6>
+                      <h6 class="d-flex align-items-center mb-3">Ingesta calórica diaria: N kcal</h6>
+                      <h6 class="d-flex align-items-center mb-3">Objetivo: Ganar masa muscular</h6>
+                      <h6 class="d-flex align-items-center justify-content-end mb-3">Editar&nbsp<i class="fas fa-edit"></i></h6>
+
+                      <p class="note note-secondary">En esta tabla puedes visualizar los platillos registrados por tu paciente en su alimentición día a día
+                         , a continuación selecciona una semana del plan:</p>
+
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Semana</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>Actual (5)</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="3">4</option>
+                            </select>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Día</th>
+                              <th scope="col">Desayuno</th>
+                              <th scope="col">1a colación</th>
+                              <th scope="col">Comida</th>
+                              <th scope="col">2a colación</th>
+                              <th scope="col">Cena</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">L</th>
+                              <td>Platillo balanceado</td>
+                              <td>Nueces</td>
+                              <td>Pasta con falafel</td>
+                              <td>Yogurt natural</td>
+                              <td>Fruta</th>
+                            </tr>
+                            <tr>
+                              <th scope="row">M</th>
+                              <td>Smoothie</td>
+                              <td>Huevo cocido</td>
+                              <td>Berengena asada</td>
+                              <td>Yogurt natural</td>
+                              <td>Quesadilla de panela</th>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

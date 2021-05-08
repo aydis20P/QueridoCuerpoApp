@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'queridocuerpo_app/base.html' %}
 {% load static %}
 
 {% block head %}
@@ -8,7 +8,7 @@
 
 {% block header %}
 
-    {% include 'navbar.html' %}
+    {% include 'queridocuerpo_app/navbar.html' %}
 
 {% endblock header %}
 
@@ -39,7 +39,7 @@
                 <div class="d-flex justify-content-between">
                     <img
                     class="mt-4"
-                    src="static/images/confused.png"
+                    src="{% static 'images/confused.png' %}"
                     height="100"
                     alt=""
                     loading="lazy"
@@ -259,7 +259,7 @@
                     <div class="d-flex justify-content-between">
                         <h1 style="font-size:6vw;" class="display-5">tus actividades</h1>
                         <img
-                        src="static/images/strava-logo.png"
+                        src="{% static 'images/strava-logo.png' %}"
                         height="20"
                         alt=""
                         loading="lazy"
@@ -346,7 +346,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <img
                     class="ms-3"
-                    src="static/images/happy.png"
+                    src="{% static 'images/happy.png' %}"
                     height="40"
                     alt=""
                     loading="lazy"
@@ -358,7 +358,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <img
                     class="ms-3"
-                    src="static/images/relaxed.png"
+                    src="{% static 'images/relaxed.png' %}"
                     height="50"
                     alt=""
                     loading="lazy"
@@ -370,7 +370,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <img
                     class="ms-3"
-                    src="static/images/confused.png"
+                    src="{% static 'images/confused.png' %}"
                     height="40"
                     alt=""
                     loading="lazy"
@@ -382,7 +382,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <img
                     class="ms-3"
-                    src="static/images/shocked.png"
+                    src="{% static 'images/shocked.png' %}"
                     height="40"
                     alt=""
                     loading="lazy"
@@ -394,7 +394,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <img
                     class="ms-3"
-                    src="static/images/sad.png"
+                    src="{% static 'images/sad.png' %}"
                     height="50"
                     alt=""
                     loading="lazy"
@@ -609,7 +609,7 @@
     }
 
     function redireccionaAlimentacion(){
-        window.location.href = "/alimentacion";        
+        window.location.href = "alimentacion";
     }
 </script>
 {% endblock script %}
